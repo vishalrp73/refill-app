@@ -1,40 +1,28 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-    container: {
+    statusContainer: {
         width: '100%',
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: 'white',
+        backgroundColor: 'white'
     },
-    headerContainer: {
+    statusHeader: {
         width: '100%',
-        backgroundColor: 'white',
-        height: 100,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: 10,
     },
-    flagIcon: {
-        width: 60,
-        height: 60,
-        backgroundColor: '#F6F6F6',
-        borderRadius: 60,
-        marginTop: 15,
-        marginRight: 25,
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: 'black',
-        shadowOffset: {width: 0, height: 2},
-        shadowRadius: 2,
-        shadowOpacity: 0.5,
+    prodTextContainer: {
+        marginLeft: 20,
     },
-    flagImg: {
-        width: 20,
-        height: 20,
+    prodText: {
+        fontSize: 20,
+        fontWeight: '700',
     },
-    completeText: {
-        marginLeft: 25,
-        fontSize: 16,
-        fontWeight: '400',
+    statTextContainer: {
+        marginLeft: 175,
+    },
+    statText: {
+        fontSize: 20,
+        fontWeight: '700',
     },
     productContainer: {
         width: '100%',

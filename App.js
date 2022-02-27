@@ -19,11 +19,11 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Login'>
           <Stack.Screen name = 'Login' component = { Login }
-            /* options = {{headerShown: false}} */ />
+            options = {{headerShown: false}} />
           <Stack.Screen name = 'Dashboard' component = { Dashboard }
-            /* options = {{headerShown: false}} */  />
+            options = {{headerShown: false}}  />
           <Stack.Screen name = 'Refill' component = { Refill }
-            /* options = {{headerShown: false}} */  />
+            options = {{headerShown: false}}  />
       </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

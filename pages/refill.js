@@ -10,6 +10,10 @@ import { styles } from './styles/refill';
 
 import Urgent from './urgent';
 import Standard from './standard';
+import StockVar from './stockVar';
+import Status from './status';
+
+import BottomNav from '../components/bottomNav/bottomNav';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +26,11 @@ const Refill = () => {
             <Stack.Navigator initialRouteName = "Urgent">
                 <Stack.Screen name = 'Urgent' component = { Urgent } options = {{headerShown: false}} />
                 <Stack.Screen name = 'Standard' component = { Standard } options = {{headerShown: false}} />
+                <Stack.Screen name = 'StockVariance' component = { StockVar } options = {{headerShown: false}} />
+                <Stack.Screen name = 'Status' component = { Status } options = {{headerShown: false}} />
             </Stack.Navigator>
+
+            <BottomNav />
 
         </SafeAreaProvider>
     )

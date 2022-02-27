@@ -59,18 +59,21 @@ const Login = () => {
                     onChangeText={(e) => setStaffId(e)}
                     keyboardType = 'number-pad'
                     style = { styles.loginInput }
-                    placeholder = 'Staff ID' />
+                    placeholder = 'Staff ID'
+                    returnKeyType='done' />
 
                 <TextInput
                     onChangeText = {(e) => setPassword(e)}
                     style = { styles.loginInput }
                     secureTextEntry = {true}
-                    placeholder = 'Password' />
+                    placeholder = 'Password'
+                    returnKeyType='done' />
 
                 <TextInput
                     style = { styles.loginInput }
                     placeholder = 'Verification Code'
-                    keyboardType = 'number-pad' />
+                    keyboardType = 'number-pad'
+                    returnKeyType='done' />
 
                     {
                         staffId && password ?
