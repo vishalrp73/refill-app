@@ -3,7 +3,7 @@ import { styles } from './productPanelStyles';
 import { View, Text, Image, Pressable } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 
-const ProductPanel = () => {
+const ProductPanel = (props) => {
 
     // Set default to props amount from DB when built
     const [aisleNum, setAisleNum] = useState(1)
@@ -38,11 +38,14 @@ const ProductPanel = () => {
                 </View>
             </View>
 
-            <Pressable onPress = {() => console.log('three dots btn pressed')}
-                style = {styles.threeDotsContainer}>
-                    <Image style = {styles.threeDotsImg}
-                        source = {require('../../assets/refillMenu/three-dots.png')} />
-            </Pressable>
+            {
+                props.dots ? 
+                        <Pressable onPress = {() => console.log('three dots btn pressed')}
+                            style = {styles.threeDotsContainer}>
+                                <Image style = {styles.threeDotsImg}
+                                    source = {require('../../assets/refillMenu/three-dots.png')} />
+                        </Pressable> : <></>
+            }
 
         </View>
     )

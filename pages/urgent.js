@@ -16,22 +16,22 @@ const Urgent = () => {
 
     return (
         <SafeAreaView style = {styles.container}>
-            <RefillHeader />
+            <RefillHeader showFlag = {true} />
 
             <Text style = {styles.completeText}>You have {numList} lists to complete today</Text>
 
             <ScrollView style = {styles.productContainer}>
                 { /* Replace with .map of all products coming from DB and pass props */}
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
-                <ProductPanel />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} />
             </ScrollView>
 
             <View style = {styles.doneFooter}>

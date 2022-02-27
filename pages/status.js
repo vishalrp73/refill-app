@@ -11,7 +11,7 @@ const Status = () => {
     
     return (
         <SafeAreaView style = {styles.statusContainer}>
-            <RefillHeader />
+            <RefillHeader showFlag = {true} />
             <View style = {styles.statusHeader}>
                 <View style = {styles.prodTextContainer}>
                     <Text style = {styles.prodText}>Product</Text>

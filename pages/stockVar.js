@@ -11,9 +11,9 @@ const StockVar = () => {
 
             <Text style = { styles.headerText }>Stock Variance Items</Text>
             { /* Map number of stock variance array items */}
-            <ProductPanel />
-            <ProductPanel />
-            <ProductPanel />
+            <ProductPanel dots = {false} />
+            <ProductPanel dots = {false} />
+            <ProductPanel dots = {false} />
 
             <View style = {styles.doneFooter}>
                 <Pressable style = {styles.doneBtn}
