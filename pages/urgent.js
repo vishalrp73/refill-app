@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import RefillMenu from '../components/refillMenu/refillMenu';
 import ProductPanel from '../components/productPanel/productPanel';
 import RefillHeader from '../components/refillHeader/refillHeader';
+import SwipePanel from '../components/swipePanel/swipePanel';
 
 const Urgent = () => {
 
@@ -22,6 +23,7 @@ const Urgent = () => {
 
             <ScrollView style = {styles.productContainer}>
                 { /* Replace with .map of all products coming from DB and pass props */}
+                {/* <ProductPanel dots = {true} />
                 <ProductPanel dots = {true} />
                 <ProductPanel dots = {true} />
                 <ProductPanel dots = {true} />
@@ -30,8 +32,8 @@ const Urgent = () => {
                 <ProductPanel dots = {true} />
                 <ProductPanel dots = {true} />
                 <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
+                <ProductPanel dots = {true} /> */}
+                <SwipePanel />
             </ScrollView>
 
             <View style = {styles.doneFooter}>
