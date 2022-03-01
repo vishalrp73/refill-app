@@ -13,11 +13,18 @@ const SwipePanel = (props) => {
     const [refillDenom, setRefillDenom] = useState(100);
     const camera = require('../../assets/refillMenu/camera.png');
 
+    const demoParams = {
+        itemId: 1,
+        productName: 'help',
+        fuckUp: 'cunt',
+        cuntass: false
+    }
+
     return (
         <SwipeActionView rightExpansionSettings={{buttonIndex: 0}, {fillOnTrigger: false}} 
                         rightButtons={[
                             {title: 'GUIDE ME', color: '#0ABBBB', callback: () => console.log('guide me btn clicked')}, 
-                            {title: 'SCAN', color: '#0ABBBB', callback: () => navigation.navigate('ScanProduct')}]}
+                            {title: 'SCAN', color: '#0ABBBB', callback: () => navigation.navigate('ScanProduct', demoParams)}]}
                         style = {styles.panelContainer}
                         >
             <View style = {styles.prodImgContainer}>

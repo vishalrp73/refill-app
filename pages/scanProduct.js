@@ -1,18 +1,34 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import 'react-native-gesture-handler';
+
 
 import RefillHeader from '../components/refillHeader/refillHeader';
-import SwipePanel from '../components/swipePanel/swipePanel';
+import ScanditSimple from '../components/scanditSimple/scanditSimple';
 import { styles } from './styles/scanProduct';
 
-const ScanProduct = () => {
-    return (
-        <SafeAreaView style = {styles.container}>
-            <RefillHeader showFlag = {false} />
-            <SwipePanel />
+const Stack = createStackNavigator();
 
-            <Text>scan product page</Text>
-        </SafeAreaView>
+const ScanProduct = ( { route, navigation} ) => {
+
+
+    console.log(route.params);
+
+    return (
+        <SafeAreaProvider>
+
+            <SafeAreaView>
+                <RefillHeader showFlag = {false} />
+            </SafeAreaView>
+
+            <Stack.Navigator initialRouteName = "ScanditSimple">
+                <Stack.Screen name = 'ScanditSimple' component = { ScanditSimple } options = {{headerShown: false}} />
+            </Stack.Navigator>
+
+
+        </SafeAreaProvider>
     )
 }
 

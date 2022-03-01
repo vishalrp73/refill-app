@@ -23,26 +23,22 @@ const Urgent = () => {
 
             <ScrollView style = {styles.productContainer}>
                 { /* Replace with .map of all products coming from DB and pass props */}
-                {/* <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} />
-                <ProductPanel dots = {true} /> */}
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
+                <SwipePanel />
                 <SwipePanel />
             </ScrollView>
 
-            <View style = {styles.doneFooter}>
                 <Pressable style = {styles.doneBtn}
                     onPress = {() => navigation.navigate('Status')} >
                         <Text style = {styles.doneText} >Done</Text>
                 </Pressable>
-            </View>
-
         </SafeAreaView>
     )
 }

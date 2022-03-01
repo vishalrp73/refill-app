@@ -3,7 +3,9 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     statusContainer: {
         width: '100%',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        flex: 1,
+        flexDirection: 'column',
     },
     statusHeader: {
         width: '100%',
@@ -30,12 +32,6 @@ export const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 'auto',
     },
-    doneFooter: {
-        height: 120,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-    },
     doneBtn: {
         marginRight: 30,
         width: 100,
@@ -48,6 +44,10 @@ export const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 2},
         shadowRadius: 2,
         shadowOpacity: 0.5,
+        position: 'absolute',
+        bottom: 50,
+        right: 10,
+        zIndex: 1,
     },
     doneText: {
         fontSize: 18,

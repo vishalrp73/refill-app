@@ -31,12 +31,11 @@ const Status = () => {
                 <PanelStatus />
             </ScrollView>
 
-            <View style = {styles.doneFooter}>
-                <Pressable style = {styles.doneBtn}
-                    onPress = {() => console.log('Done btn pressed, list to be sent back to db to drop rows')} >
-                        <Text style = {styles.doneText} >Done</Text>
-                </Pressable>
-            </View>
+            <Pressable style = {styles.doneBtn}
+                onPress = {() => console.log('Done btn pressed, list to be sent back to db to drop rows')} >
+                    <Text style = {styles.doneText} >Done</Text>
+            </Pressable>
+
 
     </SafeAreaView>
     )

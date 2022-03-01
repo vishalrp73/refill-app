@@ -13,6 +13,7 @@ import Standard from './standard';
 import StockVar from './stockVar';
 import Status from './status';
 import ScanProduct from './scanProduct';
+import ScanditSimple from '../components/scanditSimple/scanditSimple';
 
 import BottomNav from '../components/bottomNav/bottomNav';
 
@@ -30,9 +31,10 @@ const Refill = () => {
                 <Stack.Screen name = 'StockVariance' component = { StockVar } options = {{headerShown: false}} />
                 <Stack.Screen name = 'Status' component = { Status } options = {{headerShown: false}} />
                 <Stack.Screen name = 'ScanProduct' component = { ScanProduct } options = {{headerShown: false}} />
+                <Stack.Screen name = 'ScanditSimple' component = { ScanditSimple } options = {{headerShown: false}} />
             </Stack.Navigator>
 
-            <BottomNav />
+                <BottomNav />
 
         </SafeAreaProvider>
     )
