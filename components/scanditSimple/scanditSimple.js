@@ -98,6 +98,7 @@ const ScanditSimple = () => {
         if (camera) {
             camera.switchToDesiredState(FrameSourceState.Off);
         }
+        console.log('stop camera function hit')
     }
 
     const startCapture = () => {
@@ -113,21 +114,22 @@ const ScanditSimple = () => {
     const handleAppStateChange = async (nextAppState) => {
         if (nextAppState.match(/inactive|background/)) {
             stopCapture();
+            console.log('app in background')
         } else {
             startCapture();
         }
     }
 
     useEffect(() => {
-        AppState.addEventListener('change', handleAppStateChange);
+        const subscription = AppState.addEventListener('change', handleAppStateChange);
         setupScan();
         startCamera();
 
         return function cleanup () {
-            AppState.removeEventListener('change', handleAppStateChange);
+            subscription.remove()
             context.dispose();
         }
-    })
+    }, [])
 
 
     return (

@@ -7,6 +7,7 @@ import 'react-native-gesture-handler';
 
 import RefillHeader from '../components/refillHeader/refillHeader';
 import ScanditSimple from '../components/scanditSimple/scanditSimple';
+import ScanditMatrix from '../components/scanditMatrix/scanditMatrix';
 import { styles } from './styles/scanProduct';
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ const ScanProduct = ( { route, navigation} ) => {
 
             <Stack.Navigator initialRouteName = "ScanditSimple">
                 <Stack.Screen name = 'ScanditSimple' component = { ScanditSimple } options = {{headerShown: false}} />
+                <Stack.Screen name = 'ScanditMatrix' component= { ScanditMatrix } options = {{headerShown: false}} />
             </Stack.Navigator>
 
 

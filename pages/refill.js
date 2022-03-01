@@ -31,7 +31,6 @@ const Refill = () => {
                 <Stack.Screen name = 'StockVariance' component = { StockVar } options = {{headerShown: false}} />
                 <Stack.Screen name = 'Status' component = { Status } options = {{headerShown: false}} />
                 <Stack.Screen name = 'ScanProduct' component = { ScanProduct } options = {{headerShown: false}} />
-                <Stack.Screen name = 'ScanditSimple' component = { ScanditSimple } options = {{headerShown: false}} />
             </Stack.Navigator>
 
                 <BottomNav />
