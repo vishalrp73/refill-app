@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { requestCameraPermissionsIfNeeded } from '../../handlers/camera-permission-handler';
 import { Alert, AppState, BackHandler, View, Text } from 'react-native';
-import { styles } from './scanditSimpleStyles';
+import { secrets } from '../../secrets';
 
 import {
     BarcodeCapture,
@@ -26,37 +26,66 @@ import {
 
 import SwipePanel from '../swipePanel/swipePanel';
 
-const ScanditSimple = () => {
-    const licenseKey = 'AcBRgBaMNwwhNVFAAQS6C6oR2srWEvYSg0+vIFEqIojxfwt9px3MQlNUwqosXVRL2U6kmrZyo/kLHss+uWfmG21u+0UccNYXdz0Ze5F9FIgpVHRoTEokoNtd4GKkW1GPSGe4AmgjPMw4YDUkGgSqSTIXUpg7FNsZ1ylGIBoHbm65Aa2Fw7s/MuECldzW6oJtgLj16l3FxJ/4BdMoMXFq/YdbdtsZPhP1sIthvjocyCGWVB2KewBKdNEum7KdEoZ+d/FFf43DKwcPmryjosDXB9j2mAax5YPZwG9maFtMugs1HUQqgC2bjcPoIRhvtILQ8r3T/BsVmgUk7IjyE8MaP/XrQbOMV0zJxD6nn2yieDbMAsdCOCnWUdBCyQe2fIJP2Spd492qb7AxfJfUKKOVPfMPlLpePpeZhGTo9PCbqGv71Npqw3r5wF4fCY9dxSOVnnCanPzYa3cLI5ABalHk8v0kQ8g2Q2+VNgoFwff9HgzXxwFE2QuUY3q5fYzIXo5op79akqr/4J0/Ydzve00RJidog4f9XsWkXiBy6tFIjAFr1zOokVSio5Cvvyk7i6EYXskfhCApRoGjc+MXorAw/IkcmvJ13IZJfB2HsO2ftwU8pVNOmgfiqjpJ23rHghm0/+PGQvgtWfbR+tg3hxvdkgnM/v1pwAk7eDNAieT+yDJSgyUVJ2vpv8o1kOOXNuVAGyweqEOWfCN6noK5xX4L9sPx3CyiqhI7nNMIoKq/XwX1yTGp++OR9+/mZyfDmbF02y3vzglk8o9LOHTWUMaz96r4E2zpbm9iICQTPOPL/yYoZo+Agqa1TyA/0SWGhkEusuK3cJcBTcuKX9boLaI=';
+const ScanditSimple = (props) => {
+
+    console.log(secrets)
+
+    const [details, setDetails] = useState(props.details);
+    let count = 0
+
+    const iterateScan = (barcode) => {
+
+        if ( parseInt(barcode._data) === parseInt(details.GTIN) ) {
+            count++
+            console.log(count)
+        } else {
+            console.log('heck')
+        }
+
+        updateProduct();
+    }
+
+    const updateProduct = () => {
+        const update = {
+            GTIN: props.details.GTIN,
+            productName: props.details.productName,
+            productImage: props.details.productImage,
+            warehouseStock: props.details.warehouseStock,
+            minShelf: props.details.minShelf,
+            employeeId: props.details.employeeId,
+            amountScanned: count
+        }
+
+        console.log(update)
+    }
+
+
+    const licenseKey = secrets.licenseKey;
     const viewRef = useRef(null);
     const context = DataCaptureContext.forLicenseKey(licenseKey)
     const camera = Camera.default;
+    const settings = new BarcodeCaptureSettings();
+    settings.enableSymbologies([
+        Symbology.EAN13UPCA,
+        Symbology.EAN8,
+        Symbology.UPCE,
+        Symbology.QR,
+        Symbology.DataMatrix,
+        Symbology.Code39,
+        Symbology.Code128,
+        Symbology.InterleavedTwoOfFive,
+    ]);
+
+    const symbologySettings = settings.settingsForSymbology(Symbology.Code39);
+    symbologySettings.activeSymbolCounts = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+    const barcodeCaptureMode = BarcodeCapture.forContext(context, settings);
 
 
     const setupScan = () => {
-        const settings = new BarcodeCaptureSettings();
-        settings.enableSymbologies([
-            Symbology.EAN13UPCA,
-            Symbology.EAN8,
-            Symbology.UPCE,
-            Symbology.QR,
-            Symbology.DataMatrix,
-            Symbology.Code39,
-            Symbology.Code128,
-            Symbology.InterleavedTwoOfFive,
-        ]);
-
-        const symbologySettings = settings.settingsForSymbology(Symbology.Code39);
-        symbologySettings.activeSymbolCounts = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-        const barcodeCaptureMode = BarcodeCapture.forContext(context, settings);
-        barcodeCaptureMode.isEnabled = true;
 
         const listener = {
             didScan: (_, session) => {
                 const barcode = session.newlyRecognizedBarcodes[0];
-                console.log(barcode)
-                console.log(barcode._data)
-
                 const symbology = new SymbologyDescription(barcode.symbology);
                 barcodeCaptureMode.isEnabled = false;
 
@@ -68,6 +97,8 @@ const ScanditSimple = () => {
                     ],
                     { cancelable: true }
                 );
+
+                iterateScan(barcode)
             }
         }
 
@@ -88,7 +119,7 @@ const ScanditSimple = () => {
         context.setFrameSource(camera);
         const cameraSettings = new CameraSettings();
         cameraSettings.preferredResolution = VideoResolution.UHD4K;
-        camera?.applySettings(cameraSettings);
+        camera.applySettings(cameraSettings);
         requestCameraPermissionsIfNeeded()
             .then (() => camera.switchToDesiredState(FrameSourceState.On))
             .catch (() => BackHandler.exitApp());
@@ -121,12 +152,12 @@ const ScanditSimple = () => {
     }
 
     useEffect(() => {
-        const subscription = AppState.addEventListener('change', handleAppStateChange);
+        AppState.addEventListener('change', handleAppStateChange);
         setupScan();
         startCamera();
 
         return function cleanup () {
-            subscription.remove()
+            AppState.removeEventListener('change', handleAppStateChange);
             context.dispose();
         }
     }, [])
@@ -134,7 +165,7 @@ const ScanditSimple = () => {
 
     return (
         <>
-            <SwipePanel />
+            <SwipePanel details = {details} />
             < DataCaptureView style = {{flex: 1}}
                 context = {context} ref = {viewRef} />
         </>

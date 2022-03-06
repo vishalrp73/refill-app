@@ -13,7 +13,6 @@ const Stack = createStackNavigator();
 
 const App = () => {
 
-
   return (
     <SafeAreaProvider>
       <NavigationContainer>

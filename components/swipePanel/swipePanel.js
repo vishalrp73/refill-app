@@ -13,18 +13,21 @@ const SwipePanel = (props) => {
     const [refillDenom, setRefillDenom] = useState(100);
     const camera = require('../../assets/refillMenu/camera.png');
 
-    const demoParams = {
-        itemId: 1,
-        productName: 'help',
-        fuckUp: 'cunt',
-        cuntass: false
+    const params = {
+        GTIN: props.details.GTIN,
+        productName: props.details.productName,
+        productImage: props.details.productImage,
+        warehouseStock: props.details.warehouseStock,
+        minShelf: props.details.minShelf,
+        employeeId: props.details.employeeId,
+        amountScanned: props.details.amountScanned
     }
 
     return (
-        <SwipeActionView rightExpansionSettings={{buttonIndex: 0}, {fillOnTrigger: false}} 
+        <SwipeActionView rightExpansionSettings={{buttonIndex: 0, fillOnTrigger: false}} 
                         rightButtons={[
                             {title: 'GUIDE ME', color: '#0ABBBB', callback: () => console.log('guide me btn clicked')}, 
-                            {title: 'SCAN', color: '#0ABBBB', callback: () => navigation.navigate('ScanProduct', demoParams)}]}
+                            {title: 'SCAN', color: '#0ABBBB', callback: () => navigation.navigate('ScanProduct', params)}]}
                         style = {styles.panelContainer}
                         >
             <View style = {styles.prodImgContainer}>
@@ -33,7 +36,7 @@ const SwipePanel = (props) => {
             </View>
 
             <View style = {styles.prodInfoContainer}>
-                <Text style = {styles.prodAisle}>Aisle {aisleNum}</Text>
+                <Text style = {styles.prodAisle}>{props.details.productName}</Text>
                 <View style = {styles.barcodeContainer}>
                     <Image style = {styles.barcodeImg}
                         source = {require('../../assets/refillMenu/barcode.png')} />
@@ -44,11 +47,11 @@ const SwipePanel = (props) => {
                 <TextInput
                         onChangeText={(e) => setRefNum(e)}
                         keyboardType = 'number-pad'
-                        placeholder = {`${refNum}`}
+                        placeholder = {`${props.details.minShelf}`}
                         style = { styles.refillNumBox }
                         returnKeyType='done' />
                 <View style = {styles.refillDenomBox} >
-                    <Text style = {styles.refillDenomText} >/{refillDenom}</Text>
+                    <Text style = {styles.refillDenomText} >/{props.details.warehouseStock}</Text>
                 </View>
             </View>
 

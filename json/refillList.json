@@ -1,0 +1,146 @@
+[
+    {
+        "GTIN": 9415022031702,
+        "productName": "S/LORD TUNA SNAKIT THAI CHILLI 113G",
+        "productImage": "",
+        "warehouseStock": 50,
+        "minShelf": 20,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077121854,
+        "productName": "PAMS BAKED BEANS 425G",
+        "productImage": "",
+        "warehouseStock": 100,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077103195,
+        "productName": "PAMS OLIVE OIL EXTRA VIRGIN 500ML",
+        "productImage": "",
+        "warehouseStock": 150,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077121878,
+        "productName": "PAMS SPAGHETTI TOMATO SCE 425G",
+        "productImage": "",
+        "warehouseStock": 75,
+        "minShelf": 20,
+        "employeeId": 118,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077404094,
+        "productName": "PAMS CORN KERNEL WHOLE 410G",
+        "productImage": "",
+        "warehouseStock": 248,
+        "minShelf": 20,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9414882431868,
+        "productName": "ETA PEANUTS SALTED 200G",
+        "productImage": "",
+        "warehouseStock": 120,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077035519,
+        "productName": "PAMS OIL SPRAY CANOLA COOKING 200G",
+        "productImage": "",
+        "warehouseStock": 56,
+        "minShelf": 20,
+        "employeeId": 118,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077036912,
+        "productName": "PAMS TUNA SMOKED 95G",
+        "productImage": "",
+        "warehouseStock": 94,
+        "minShelf": 15,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415077151011,
+        "productName": "PAMS BEANS RED KIDNEY 400G",
+        "productImage": "",
+        "warehouseStock": 120,
+        "minShelf": 20,
+        "employeeId": 118,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9300667004276,
+        "productName": "CON CAS  CHKN NOODLE 4S",
+        "productImage": "",
+        "warehouseStock": 43,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9400547021390,
+        "productName": "WATTIES V/SPCL CREAMY PUMPKIN 535G",
+        "productImage": "",
+        "warehouseStock": 249,
+        "minShelf": 20,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 11210000872,
+        "productName": "TABASCO SAUCE RED 60ML",
+        "productImage": "",
+        "warehouseStock": 102,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9421013441481,
+        "productName": "JACK LINKS BEEF JERKY TERIYAKI 50G",
+        "productImage": "",
+        "warehouseStock": 34,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9300657021450,
+        "productName": "HEINZ S/GOOD AIOLI SQZ 295ML",
+        "productImage": "",
+        "warehouseStock": 76,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9415912020502,
+        "productName": "COOKIE TIME CHOC CHIP TRIPLE CHOC 85G",
+        "productImage": "",
+        "warehouseStock": 119,
+        "minShelf": 20,
+        "employeeId": 118,
+        "amountScanned": 0
+    },
+    {
+        "GTIN": 9300830022588,
+        "productName": "DOVE EXTRA FRESH ANTIP/",
+        "productImage": "",
+        "warehouseStock": 78,
+        "minShelf": 10,
+        "employeeId": 320,
+        "amountScanned": 0
+    }
+]
